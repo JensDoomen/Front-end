@@ -78,6 +78,13 @@ data(){
 
     }
 },
+
+mounted: function(){
+		console.log("mounted")
+
+		this.read();
+    },
+	
 methods:{
 read() {
 	console.log("read")
@@ -116,20 +123,7 @@ changeaccount(){
 
 
 },
-// const data = {
-//             oldPW: this.oldPW,
-//             newPW: this.newPW,
-//             confirmPW: this.confirmPW
-//           }
-//           //voer AXIOS PUT uit
-//           await axios.put('https://localhost:44319/Account/changePassword', data, {
-//             headers: {
-//               Authorization: Bearer ${localStorage.getItem('token')}
-//             }
-//           })
-//           .then(() => {
-//             this.showMessage = true
-//           })
+
   
 
 deleteaccount(){
@@ -144,10 +138,7 @@ deleteaccount(){
 
 
 },
-	mounted: function(){
-
-		this.read();
-      }
+	
 }
 }
 
