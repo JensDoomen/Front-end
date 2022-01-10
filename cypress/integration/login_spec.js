@@ -7,6 +7,8 @@ describe('Login a user', ()=> {
         cy.get('input').eq(1).type("Test22");
         
         cy.contains('Submit').click();
+
+       
     })
 });
 

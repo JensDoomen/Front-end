@@ -74,7 +74,13 @@ data(){
 		name: "",
         email: "",
         password: "",
-		items: []
+		userId: "",
+		items: [],
+		// newname: '',
+		// newemail: '',
+		// confirmpassword: ''
+		
+		
 
     }
 },
@@ -94,6 +100,8 @@ read() {
         }).then((response) => {
           this.name = response.data.name
           this.email = response.data.email
+		  this.password = response.data.password
+		  this.userId = response.data.userId
 		  console.log(response)
 		
 
@@ -105,28 +113,75 @@ read() {
 
 },
 changeaccount(){
-	const data = {
-            newname: this.name,
-            newemail: this.email,
-            confirmpassword: this.password,
-			userId: this.userId 
-          }
-	 axios.put('https://localhost:44347/Authentication/changeaccount', data, {
-		headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')}
+	// const data = {
+	// 	 	// name: '',
+	// 		// email: '',
+	// 		// password: '',
+    //         // newname: this.name,
+    //         // newemail: this.email,
+    //         // confirmpassword: this.password,
+	// 		//userId: this.userId 
+	// 		name: 'this.newname',
+	// 		email: 'this.newemail',
+	// 		password: "this.confirmpassword"
+			
+    //       }
+		  console.log(this.newname)
+	 //axios.put('https://localhost:44347/Authentication/changeaccount/', JSON.stringify(this.data),{
+		// headers: {
+        //   Authorization: 'Bearer ' + localStorage.getItem('token')},
+		//    newname: this.name,
+        //     newemail: this.email,
+        //     confirmpassword: this.password,
+		// 	userId: this.userId 
 	
-	})
-	.then(() => { 
-	this.showMessage = true
-	})
-	
+	// })
+	// .then(() => { 
+	// this.showMessage = true
+	// })
 
+	axios({
+        method: 'put',
+        url: 'https://localhost:44347/Authentication/changeaccount/',
+		headers: {
+           Authorization: 'Bearer ' + localStorage.getItem('token')
+		},
+
+        data: {
+			email: this.newemail,
+          	name: this.newname,
+			password: this.confirmpassword
+        }
+      })
+	  .then(() => {
+		this.read();
+
+	  })
 
 },
+
+
 
   
 
 deleteaccount(){
+	// const data ={
+	// 	Authorization: 
+
+	// }
+	axios.delete('https://localhost:44347/Authentication/delete', {
+		headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('token')}
+	})
+	.then((response) => {
+	  console.log(response)
+	  localStorage.clear();
+      this.$emit('clearToken');
+	  this.$router.push("/Inlog");
+
+	})
+
+
 // axios.delete('https://localhost:44347/Authentication/delete',{
 // 	headers: {
 //           Authorization: 'Bearer ' + localStorage.getItem('token')}

@@ -100,6 +100,7 @@ import { Text } from '@vue/runtime-core';
         //this.socketOpen = true;
         this.message = event.data
         console.log(event.data)
+        console.log(event)
 
         var endTime = new Date();
 
