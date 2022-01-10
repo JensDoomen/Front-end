@@ -4,6 +4,7 @@
     <input v-model="email" type="email" class="form-control" placeholder="Email" required>
     <input v-model="password" type="password" class="form-control" placeholder="Password" required>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+    <div class="datacheck" :style="{color: ' red'}" v-show="hidden">Data is not correct!!</div>
   </form>
 </template>
 
@@ -15,7 +16,8 @@ export default {
   data(){
     return{
       email: "",
-      password: ""
+      password: "",
+      hidden: false
     }
     
   },
@@ -31,7 +33,16 @@ export default {
       })
       .then((response) => {
         console.log(response.data)
-        this.$emit('setToken', response.data)
+
+        if(response.data === 400){
+          this.hidden = true
+
+        }
+        else{
+          this.$emit('setToken', response.data)
+
+        }
+        
       })
       // const headers = {
       //   'Content-Type': 'application/json',
@@ -53,5 +64,8 @@ export default {
 
 
 <style scoped>
+.datacheck{
+  color:red,
+}
 
 </style>

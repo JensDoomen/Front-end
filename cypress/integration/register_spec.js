@@ -7,6 +7,8 @@ describe('Register a user', ()=> {
         cy.get('input').eq(1).type("Otto@mail.com");
         cy.get('input').eq(2).type("Test22");
         cy.contains('Submit').click();
+
+        cy.wait(6000)
     })
 });
 
@@ -19,5 +21,7 @@ describe('Does not register a user', ()=> {
         cy.get('input').eq(1).type("Otto@mail.com");
         
         cy.contains('Submit').click();
+
+        cy.wait(6000)
     })
 });

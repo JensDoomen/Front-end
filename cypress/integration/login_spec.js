@@ -3,10 +3,11 @@ describe('Login a user', ()=> {
         cy.visit('http://localhost:8081/');
 
         cy.contains('Login').click();
-        cy.get('input').first().type("Otto@mail.comn");
+        cy.get('input').first().type("Otto@mail.com");
         cy.get('input').eq(1).type("Test22");
         
         cy.contains('Submit').click();
+        cy.wait(9000)
 
        
     })
@@ -17,10 +18,12 @@ describe('Does not Login a user', ()=> {
         cy.visit('http://localhost:8081/');
 
         cy.contains('Login').click();
-        cy.get('input').first().type("Otto@mail.comn");
+        cy.get('input').first().type("Otto@mail.com");
         cy.get('input').eq(1).type("Test");
         
         cy.contains('Submit').click();
+
+        cy.wait(9000)
     })
 });
 describe('Does not fill int the fields', ()=> {
@@ -31,5 +34,6 @@ describe('Does not fill int the fields', ()=> {
         
         
         cy.contains('Submit').click();
+        cy.wait(6000)
     })
 });
