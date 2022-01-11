@@ -20,5 +20,6 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 8089
+EXPOSE 8081
+EXPOSE 8080
 CMD ["http-server", "dist"]
