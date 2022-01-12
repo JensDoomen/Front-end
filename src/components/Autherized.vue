@@ -37,7 +37,7 @@ export default {
        headers: { Authorization: `Bearer ` + token }
      };
 
-     axios.get("https://localhost:44347/Authentication/auth",  config)
+     axios.get("http://localhost:44347/Authentication/auth",  config)
          .then((response) => {
            console.log(response.data);
          })

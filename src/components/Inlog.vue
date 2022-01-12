@@ -25,7 +25,7 @@ export default {
     submitLogin(){
       axios({
         method: 'post',
-        url: 'https://localhost:44347/Authentication/login',
+        url: 'http://localhost:44347/Authentication/login',
         data:{
           email: this.email,
           password: this.password

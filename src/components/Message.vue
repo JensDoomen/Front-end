@@ -48,7 +48,7 @@ data(){
 },
 methods:{
 refreshData(){
-    axios.get('https://localhost:44316/api/Message')
+    axios.get('http://localhost:44316/api/Message')
     .then((response)=>{
         console.log(response.data)
         this.Messages=response.data;

@@ -94,7 +94,7 @@ mounted: function(){
 methods:{
 read() {
 	console.log("read")
-    axios.get('https://localhost:44347/Authentication/getUser',{ 
+    axios.get('http://localhost:44347/Authentication/getUser',{ 
 	headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')} //the token is a variable which holds the token
         }).then((response) => {
@@ -142,7 +142,7 @@ changeaccount(){
 
 	axios({
         method: 'put',
-        url: 'https://localhost:44347/Authentication/changeaccount/',
+        url: 'http://localhost:44347/Authentication/changeaccount/',
 		headers: {
            Authorization: 'Bearer ' + localStorage.getItem('token')
 		},
@@ -169,7 +169,7 @@ deleteaccount(){
 	// 	Authorization: 
 
 	// }
-	axios.delete('https://localhost:44347/Authentication/delete', {
+	axios.delete('http://localhost:44347/Authentication/delete', {
 		headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')}
 	})
