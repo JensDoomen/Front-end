@@ -4,6 +4,7 @@ import Register from '@/components/Register.vue'
 import Inlog from '@/components/Inlog.vue'
 import Autherized from '@/components/Autherized.vue'
 import Settings from '@/components/Settings.vue'
+import Home from '@/components/Home.vue'
 
 
 const routes =[
@@ -30,6 +31,11 @@ const routes =[
     path: '/settings',
     name: 'Settings',
     component: Settings
+  },
+  {
+    path: '/',
+    name: 'home',
+    component: Home
   }
 
 ]

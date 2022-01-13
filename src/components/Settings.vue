@@ -199,3 +199,9 @@ deleteaccount(){
 
 
 </script>
+<style>
+.btn btn-secondary{
+	margin-right: 10px;
+
+}
+</style>

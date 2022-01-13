@@ -7,7 +7,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-md-0" >
 
           <li class="nav-item">
-            <router-link to="/Inlog" class="nav-link active">Login</router-link>
+            <router-link to="/Inlog" class="nav-link active">Log in</router-link>
           </li>
           <li class = "nav-item">
           <Nav2
@@ -22,7 +22,7 @@
             <router-link to="/settings" class="nav-link active">Account</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/inlog" @click="clearToken" class="nav-link active">Uitloggen</router-link>
+            <router-link to="/inlog" @click="clearToken" class="nav-link active">Log out</router-link>
           </li>
         </ul>
         <ul class="navbar-nav me-auto mb-2 mb-md-0" v-if="authorized">

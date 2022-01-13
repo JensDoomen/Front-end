@@ -3,6 +3,8 @@
     :authorized="this.isAuthorized"
     v-on:clearToken="clearToken"
 />
+
+
 <!--
   <div class="navContainer"></div>
   <div class="navBar"></div>
@@ -18,6 +20,11 @@
   </div>
   
 </nav> -->
+
+
+
+
+
  <main class="form-signin">
    <router-view
        v-on:setToken="setToken"
@@ -41,6 +48,7 @@
 // import ChatBox from './components/ChatBox.vue'
 // import Message from './components/Message.vue'
 import Nav from './components/Nav.vue'
+//import Home from './components/Home.vue'
 
 export default {
   name: 'App',
@@ -48,6 +56,7 @@ export default {
   components: { Nav },
   data(){
     hoverFriend: false
+    
   },
   methods:{
     setToken(data){
@@ -68,6 +77,7 @@ export default {
   text-align: center;
   color: #212529;
   margin-top: 0px;
+
 }
 .listContainer{
  display: inline;
@@ -105,8 +115,8 @@ display: flex;
     
 }
 .logo{
-      height: 50px;
-      width: 50px;
+      height: 450px;
+      width: 550px;
       margin: 0px;
       align-self: left ;
       padding: 0px;
