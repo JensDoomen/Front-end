@@ -48,7 +48,10 @@
 				<div class="row gutters">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 						<div class="text-right">
-							<button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
+							<button type="button" id="submit" name="submit" class="btn btn-secondary" v-on:click="cancel">
+								<!-- <router-link to="/autherized" class="nav-link active"></router-link> -->
+								Cancel</button>
+							<!-- <button><router-link class="nav-link" to="/Inlog">Sign in</router-link></button> -->
 							<button type="button" id="submit" name="submit" class="btn btn-primary" v-on:click="changeaccount">Update</button>
 						
 						</div>
@@ -92,6 +95,9 @@ mounted: function(){
     },
 	
 methods:{
+cancel(){
+this.$router.push("/autherized")
+},
 read() {
 	console.log("read")
     axios.get('http://localhost:44347/Authentication/getUser',{ 
@@ -202,6 +208,11 @@ deleteaccount(){
 <style>
 .btn btn-secondary{
 	margin-right: 10px;
+	height: 25px;
 
 }
+/* .nav-link.active{
+	height: 10px;
+	width: 10px;
+} */
 </style>
